@@ -1,7 +1,10 @@
 DribbbleTest::Application.routes.draw do
   resources :users, :user_sessions
+  resource :dashboard, :controller => 'dashboard', :only => "show"
+  
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
+  
   root :to => 'user_sessions#new'
 
   # The priority is based upon order of creation:

@@ -20,3 +20,7 @@ div#user_nav{
 div#user_nav a, div#user_nav span{
 	color: #006DCC;
 }
+
+div#user_nav span.white{
+	color: #FFFFFF;
+}
