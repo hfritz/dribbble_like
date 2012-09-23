@@ -86,7 +86,7 @@ class UsersController < ApplicationController
   end
   
   def like_pic
-    user_id = Rails.env == 'test' ? User.first.id : current_uer.id
+    user_id = Rails.env == 'test' ? User.first.id : current_user.id
     UserLike.create(:user_id => user_id, :liked_user_id => params[:liked_user_id])
     render :nothing => true
   end
