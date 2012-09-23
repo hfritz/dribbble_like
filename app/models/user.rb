@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation, :pic
-  has_one :picture
+  has_many :user_likes
   
   has_attached_file :pic, 
         :path => ":rails_root/public/system/:attachment/:id/:style/:filename",

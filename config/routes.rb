@@ -4,6 +4,9 @@ DribbbleTest::Application.routes.draw do
     member do
       get 'picture'
     end
+    collection do
+      get 'like_pic'
+    end
   end
   resources :user_sessions
   resource :dashboard, :controller => 'dashboard', :only => "show"

@@ -3,7 +3,35 @@
     <div class="pic_container">
       <%= image_tag user.pic.url(:normal) %>
       <br />
-      <%= link_to 'like', '#'%>
+      by <%= user.username %>
+      <% if !@user_likes.include?(user.id) %> 
+        <%= link_to 'Like', "javascript: like(#{user.id})", :id => "like_#{user.id}" %>
+        <span class='liked' id='liked_<%= user.id %>'>Liked</span>
+      <% else %>
+        <span class='liked_before'>Liked</span>
+      <% end %>
     </div>
   <% end %>
 </div>
+
+<script>
+  function like(id){
+    $.ajax({
+      url: '<%= like_pic_users_path %>',
+      data: { liked_user_id: id }
+    }).done(function() {
+      $('#like_'+id).hide();
+      $('#liked_'+id).show();
+    });
+  }
+</script>
+
+<style>
+  .liked{
+    display: none;
+    color: red;
+  }
+  .liked_before{
+    color: red;
+  }
+</style>

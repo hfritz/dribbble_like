@@ -84,4 +84,9 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def like_pic
+    UserLike.create(:user_id => current_user.id, :liked_user_id => params[:liked_user_id])
+    render :nothing => true
+  end
 end
