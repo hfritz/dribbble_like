@@ -1,5 +1,11 @@
 DribbbleTest::Application.routes.draw do
-  resources :users, :user_sessions
+  
+  resources :users do
+    member do
+      get 'picture'
+    end
+  end
+  resources :user_sessions
   resource :dashboard, :controller => 'dashboard', :only => "show"
   
   match 'login' => 'user_sessions#new', :as => :login

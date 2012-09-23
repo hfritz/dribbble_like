@@ -3,6 +3,7 @@
 <p>
   <b>Username</b><br>
   <%= @user.username %>
+  <%= image_tag @user.pic.url(:thumb) unless @user.pic_file_name.nil? %>
 </p>
 
 <p>

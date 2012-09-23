@@ -1,3 +1,9 @@
 <div id="pics_container">
-  all pics here!!!
+  <% @users.each do |user| %>
+    <div class="pic_container">
+      <%= image_tag user.pic.url(:normal) %>
+      <br />
+      <%= link_to 'like', '#'%>
+    </div>
+  <% end %>
 </div>

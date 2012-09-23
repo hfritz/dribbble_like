@@ -31,7 +31,11 @@ class UsersController < ApplicationController
       format.json { render :json => @user }
     end
   end
-
+  
+  def picture
+    @user = User.find(params[:id])
+  end
+  
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])

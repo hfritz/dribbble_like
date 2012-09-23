@@ -24,3 +24,10 @@ div#user_nav a, div#user_nav span{
 div#user_nav span.white{
 	color: #FFFFFF;
 }
+
+div.pic_container{
+	width: 400px;
+	height: 340px;
+	float: left;
+	padding: 10px;
+}
