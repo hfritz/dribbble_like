@@ -18,6 +18,10 @@ group :assets do
   gem 'twitter-bootstrap-rails', '2.0.3'
 end
 
+group :test do
+  gem "rspec-rails"
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
