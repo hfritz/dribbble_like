@@ -1,0 +1,1 @@
+User based system which functionalities consists on uploading a picture and liking other people's pics.
